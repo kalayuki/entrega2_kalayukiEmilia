@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+.LogoNavBar{
+  border-radius: 2rem;
+  width: 50px;
+}
+.carritoImg{
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+}
+.contendorCard{
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  
+}
+.NavbarNavBar{
+  color:black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: green;
+}
+.link_navBar{
+  text-decoration: none;
+  color: black;
+}
+.itemDetailContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.linksNav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  
+}
