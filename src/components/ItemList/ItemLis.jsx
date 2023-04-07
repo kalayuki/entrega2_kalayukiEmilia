@@ -4,7 +4,7 @@ import Item from "../Item/Item"
 const ItemLis = ({ items }) => {
   return (
     <div className="itemList">
-      <h4>PRODUCTOS</h4>
+      <h4>PRODUCTOs</h4>
 
       <hr />
       <div className="contendorCard">
