@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-
-
 import { pediDatos } from "../../helpers/pediDatos";
 import ItemLis from "../ItemList/ItemLis";
 
@@ -11,33 +9,39 @@ import ItemLis from "../ItemList/ItemLis";
 
 const ItemListContainer = () => {
 
-  const [productos, setProductos]=useState(null)
-  const [loading, setLoading]=useState(true)
-    
-  const {categoryId} = useParams()
+  //LLAMO AL CONTEXTO
+
+  
 
  
 
-useEffect(() => {
-  setLoading(true)
-  pediDatos()
-  .then((response)=>{
+  const [productos, setProductos] = useState(null)
+  const [loading, setLoading] = useState(true)
 
-    if(!categoryId){
-      setProductos(response)
-    }else{
-      setProductos(response.filter((prod)=> prod.category === categoryId))
-    }
+  const { categoryId } = useParams()
 
-   
-  })
-  .catch((error)=>{
-    console.log(error)
-  })//para que se ejecue si por mas que de true o erro 
- .finally(()=>{
-    setLoading(false)
-  })
-}, [categoryId])
+
+
+  useEffect(() => {
+    setLoading(true)
+    pediDatos()
+      .then((response) => {
+
+        if (!categoryId) {
+          setProductos(response)
+        } else {
+          setProductos(response.filter((prod) => prod.category === categoryId))
+        }
+
+
+      })
+      .catch((error) => {
+        console.log(error)
+      })//para que se ejecue si por mas que de true o erro 
+      .finally(() => {
+        setLoading(false)
+      })
+  }, [categoryId])
 
 
 
@@ -46,10 +50,16 @@ useEffect(() => {
     <div >
       {
         loading
-        ? <h2>Cargando datos ...</h2>
-        :<ItemLis items={productos}/>
+
+          ?
+
+          <div className="presentacion">
+            <h2>Cargando productos ...</h2>
+            <img src="../imagenes/nemuLogo.jpg" className="nemuPresentacion" />
+          </div>
+          : <ItemLis items={productos} />
       }
-    
+
     </div>
   )
 }

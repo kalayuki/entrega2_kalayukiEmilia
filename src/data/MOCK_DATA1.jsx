@@ -8,9 +8,9 @@ export const MOCK_DATA1 =[
             title: "ALMOHADITAS",
             medida: "250g",
             precio: 190,
-            stock:20,
+            stock:1,
             description: "Almoditas rellenas de frutilla/banana/almendra",
-            img:"https://i.postimg.cc/W3qcGz9R/almuhaditas-granix.jpg"
+            img:"https://i.postimg.cc/W3qcGz9R/almuhaditas-granix.jpg",
         },
         {
             id: 2,
